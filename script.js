@@ -5,13 +5,13 @@ var questionElement = document.getElementById("question")
 var answerButtonsElement = document.getElementById("answer-buttons")
 //Assigning var so that questions can be shuffled...
 //This is if we want shuffled questions 
-var shuffledQuestions, currentQuestionIndex
+let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener("click", startQuiz)
 
 //Starting the quiz/ pressing start button
 function startQuiz() {
-    console.log('start the quiz')
+    console.log("start the quiz")
     startButton.classList.add("hide")
     //This function will randomize questions
     shuffledQuestions = questions.sort(() => Math.random() - .5)
@@ -29,21 +29,25 @@ function setNextQuestion () {
 //Taking a question from question object with the array
 function showQuestion(question) {
     questionElement.innerText = question.question
+    question.answer.forEach(answer => {
+        var button = document.createElement("button")
+        button.innerText = answer.text
+        button.classList.add("btn")
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener("click", selectAnswer)
+        answerButtonsElement.appendChild(button);
+    })
 }
 //After selecting an answer/
 function selectAnswer () {
-
 
 }
 
 //Set questions in an array
 var questions = [
-    {
-        question: "What is JavaScript?",
-        answer: [
-            { text: "a scripting language", correct: true},
-            { text: "a type of flower", correct: false},
-            { text: ""}
-        ]
+    {question: "What is JavaScript?", 
+        answer: 
     }
 ]
