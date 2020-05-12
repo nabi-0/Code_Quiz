@@ -9,6 +9,7 @@ function startQuiz() {
     console.log('start the quiz')
     startButton.classList.add("hide")
     //questionContainerElements.classList.remove("hide")
+    setNextQuestion()
 }
 
 //Going to next question/ pressing the next button
@@ -22,3 +23,14 @@ function selectAnswer () {
 
 
 }
+
+//Set questions in an array
+var questions = [
+    {
+        question: "What is JavaScript?",
+        answer: [
+            { text: "a scripting language", correct: true},
+            { text: "a type of flower", correct: false}
+        ]
+    }
+]
