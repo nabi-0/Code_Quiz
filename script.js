@@ -6,8 +6,7 @@ var questionContainerElements = document.getElementById("question-container")
 var questionElement = document.getElementById("question")
 var answerButtonsElement = document.getElementById("answer-buttons")
 var timerElement = document.getElementById("timer")
-//Assigning var so that questions can be shuffled...
-//This is if we want shuffled questions 
+
 let currentQuestionIndex = score = 0;
 let timer = 30
 let timerHandle = null
@@ -29,20 +28,13 @@ function startQuiz() {
     //console.log("start the quiz")
     startButton.classList.add("hide")
     questionContainerElements.classList.remove("hide")
-    //This function will randomize questions
-    //shuffledQuestions = questions.sort(() => Math.random() - .5)
-    //Starting at 0 because of our shuffled questions array
-    //currentQuestionIndex = 0
-    //questionContainerElements.classList.remove("hide")
     setNextQuestion()
 }
 
 //Going to next question/ pressing the next button
 function setNextQuestion () {
-    //resetState() ////////////////////////////////////////////////////////////////
+    //resetState() /////////
     showQuestion(questions[currentQuestionIndex]);
-    //Get question and show
-    //showQuestion(shuffledQuestions[currentQuestionIndex])
 }
 //Taking a question from question object with the array
 function showQuestion(question) {
@@ -57,11 +49,9 @@ function showQuestion(question) {
             //button.setAttribute("data", "correct:" + String (answer.correct))
         //}
         button.addEventListener("click", selectAnswer)
-        //answerButtonsElement.textContent="";
         answerButtonsElement.appendChild(button)
     })
-//}
-// Function for restarting settings for next question ///////////////////////////
+// Function for restarting settings for next question /////////////////////
 //function resetState() {
     //nextButton.classList.add("hide")
     //while (answerButtonsElement.firstChild) {
@@ -102,46 +92,46 @@ var questions = [
     {
         question: "What is JavaScript?",
         answer: [
-            { text: "a type of flower", correct: false },
-            { text: "a scripting language", correct: true},
-            { text: "someones hat", correct: false},
-            { text: "blah blah blah", correct: false},
+            { text: "A type of flower", correct: false },
+            { text: "A scripting language", correct: true},
+            { text: "Someones lost hat", correct: false},
+            { text: "The color of bacteria under a microscope", correct: false},
         ]
     },
     {
-        question: "What is Java?",
+        question: "What is one of the JavaScript Data Types?",
         answer: [
-            { text: "a type of flower", correct: false },
-            { text: "a scripting language", correct: true},
-            { text: "someones hat", correct: false},
-            { text: "blah blah blah", correct: false},
+            { text: "Boolean", correct: true},
+            { text: "Function", correct: false},
+            { text: "Data Types", correct: false},
+            { text: "Burpees", correct: false},
         ]
     },
     {
-        question: "What is Script?",
+        question: "What kind of tag does JavaScript live in on htlm?",
         answer: [
-            { text: "a type of flower", correct: false },
-            { text: "a scripting language", correct: true},
-            { text: "someones hat", correct: false},
-            { text: "blah blah blah", correct: false},
+            { text: "<meta charste='pick me' />", correct: false },
+            { text: "<button></button>", correct: false},
+            { text: "<div></div>", correct: false},
+            { text: "<script></script>", correct: true},
         ]
     },
     {
-        question: "What is?",
+        question: "What does the method 'document.getElementById' do?",
         answer: [
-            { text: "a type of flower", correct: false },
-            { text: "a scripting language", correct: true},
-            { text: "someones hat", correct: false},
-            { text: "blah blah blah", correct: false},
+            { text: "It calls headquarters for backup", correct: false },
+            { text: "It allows JavaScript to access the main browsing page", correct: false},
+            { text: "It returns the element that has the ID attribute", correct: true},
+            { text: "It sends flowers to your grandmother", correct: false},
         ]
     },
     {
-        question: "JavaScript?",
+        question: "Why do we create variables in JavaScript?",
         answer: [
-            { text: "a type of flower", correct: false },
-            { text: "a scripting language", correct: true},
-            { text: "someones hat", correct: false},
-            { text: "blah blah blah", correct: false},
+            { text: "They hold data value and declare a variable", correct: true},
+            { text: "They create music notes for the css style sheet", correct: false},
+            { text: "They help protect your computer from viruses", correct: false},
+            { text: "They assign an object to an array with an element", correct: false},
         ]
     },
 ];
