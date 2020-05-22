@@ -10,28 +10,31 @@
   </head>
 
   <body>
-     <div class="container">
-  
-     <header>
-       <h1>Take the Quiz!</h1>
-     </header>
-    
-     <div id="question-container" class="hide"></div>
-      <div id="question">Question</div>
-      <div id="answer-btuttons" class="btn-grid">
-        <button class="btn">Answer 1</button>
-        <button class="btn">Answer 2</button>
-        <button class="btn">Answer 3</button>
-        <button class="btn">Answer 4</button>
+    <div class="container">
+
+      <header>
+        <h1>Take the Quiz!</h1>
+      </header>
+
+      <div id="question-container" class="hide">
+        <div id="question">Question</div>
+        <div id="answer-buttons" class="btn-grid">
+          <button class="btn">Answer 1</button>
+          <button class="btn">Answer 2</button>
+          <button class="btn">Answer 3</button>
+          <button class="btn">Answer 4</button>
+        </div>
+        <p> time left: <span id="timer"></span></p>
       </div>
-       <div class="controls">
-         <button id="start-btn" class="start-btn btn">START</button>
-         <button id="next-btn" class="next-btn btn hide">NEXT</button>
+      <div class="controls">
+        <button id="start-btn" class="start-btn btn">START</button>
+        <button id="next-btn" class="next-btn btn hide">NEXT</button>
       </div>
-     </div>
+      <div id="results-container" class="hide"></div>
+    </div>
 
     <script src="script.js"></script>
   
   </body>
 
-</html>
+</html> 
